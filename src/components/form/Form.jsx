@@ -11,20 +11,20 @@ export default class Form extends Component {
   nameId = nanoid();
   numberId = nanoid();
 
-  handleChange = ({ target: { name, value } }) => {
+  handleChange = ({ target: { name, value } }) =>
     this.setState({ [name]: value });
-  };
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.handleUpdate(this.state);
     this.handleReset();
   };
-  handleReset = () => {
+  handleReset = () =>
     this.setState({
       name: '',
       number: '',
     });
-  };
+
   render() {
     return (
       <div className={css.formContainer}>

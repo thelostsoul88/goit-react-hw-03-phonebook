@@ -1,15 +1,15 @@
-import css from "./ContactList.module.css";
+import css from './ContactList.module.css';
 
 const ContactList = ({ state: { contacts, filter }, handleDelete }) => {
   const contactArr = contacts.filter(
-    (i) =>
+    i =>
       i.name.toLowerCase().includes(filter.toLowerCase()) ||
       i.number.includes(filter)
   );
   return (
     <>
       <ul className={css.contactList}>
-        {contactArr.map((i) => {
+        {contactArr.map(i => {
           return (
             <li id={i.id} key={i.id} className={css.contactItem}>
               {i.name}: {i.number}
